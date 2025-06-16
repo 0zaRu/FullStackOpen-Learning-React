@@ -1,35 +1,87 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+const Hello = (props) => {
+  console.log(props)
+  if (!props.age) {
+    return (
+      <div>
+        <p>Hellow {props.name}</p>
+      </div>
+    )
 
-function App() {
-  const [count, setCount] = useState(0)
+  } else {
+    return (
+      <div>
+        <p>Hellow {props.name}, you are {props.age} years old</p>
+      </div>
+    )
+  }
+
+}
+
+const App = () => {
+  
+  const name = 'Alejandro'
+  const age = 13
+
+  const now = new Date()
+  const a = 10
+  const b = 20
+  console.log(now, a+b)
+  
+  const friends = [
+    {name: 'Alberto', age: 22},
+    {name: 'Alejandro', age: 23},
+  ]
+
+  const friendsName = [
+    friends[0].name,
+    friends[1].name
+  ]
 
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <p>{friends[0].name} {friends[0].age}</p>
+        <p>{friends[1].name}</p>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div>
+        <p>{friendsName.join(', ')}</p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+
+      <h1>Greetings</h1>
+      <Hello 
+        name="World"
+      />
+      <Hello 
+        name="Alberto"
+      />
+
+      <Hello
+        name={name}
+        age={age + 10}
+      />
+
+      <p>
+        {a} + {b} = {a + b}
       </p>
     </>
   )
 }
 
 export default App
+
+
+/*
+
+Esto funciona
+
+export default () => {
+  return (
+    <div>
+      <p>Hellow World</p>
+    </div>
+  )
+}
+
+
+*/

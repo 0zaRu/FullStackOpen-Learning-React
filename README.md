@@ -8,6 +8,7 @@ Repository for the FullStackOpen course exercises
 
 - [X] Part 0: Fundamentals of Web apps
 - [ ] Part 1: Introduction to React
+  - [X] 1.1: courseInfo
 - [ ] Part 2: Communicating with server
 - [ ] Part 3: Programming a server with NodeJS and Express
 - [ ] Part 4: Testing Express servers, user administration
